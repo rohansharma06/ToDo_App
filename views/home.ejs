@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://kit.fontawesome.com/95749693e7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">ToDo App</h1>
+        <hr>
+         <!-- ----Div1 for Display current date and day---- -->
+        <div class="date-section">
+            <div class="dateContainer">
+                <div id="date"><span>23</span></div>
+                <div id="monthYear">
+                    <span id="month">May</span>
+                    <span id="year">2020</span>
+                </div>
+            </div>
+            
+            <div id="day">
+                <span>Tuesday</span>
+            </div>
+        </div>
+        <hr>
+
+        <!-- ----form for taking inputs---- -->
+        <form action="">
+            <!-- ----Div1 for adding category and dueDate---- -->
+            <div class="category-dueDate">
+                <div id="category">
+                    <h3>Category</h3>
+                    <div id="category-icon">
+                        <select name="category" required>
+                            <option value="none" selected disabled hidden> 
+                                Choose a Category
+                            </option>
+                            <option value="personal">Personal</option>
+                            <option value="home">Home </option>
+                            <option value="business">Business </option>
+                            <option value="work">Work </option>
+                        </select>
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    
+                </div>
+                <div id="dueDate">
+                    <h3>Due Date</h3>
+                    <div id="calender-icon">
+                        <input type="date" id="birthday" name="Due_Date" required>
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <!-- ----Div2 for adding Task---- -->
+            <div class="taskInput">
+                <h3>Enter Task</h3>
+                <div class="add-task">
+                    <input type="text" name="taskName" placeholder="What do you need to do?" required>
+                    <button type="submit"> <i class="fas fa-plus-circle add-item"></i> </button>
+                </div>
+            </div>
+        </form>
+         <div class="task-list">
+
+         </div>
+        
+        
+    </div>
+    
+</body>
+</html>
