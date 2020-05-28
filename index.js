@@ -2,10 +2,7 @@
 const express=require('express');
 const port=8000;
 const app=express();
-
-//---- routing 
-app.use('/',require('./routes'));
-
+const db=require('./config/mongoose');
 //---- excessing static folder
 app.use(express.static('assets'));
 
@@ -13,6 +10,8 @@ app.use(express.static('assets'));
 app.set('view engine','ejs');
 app.set('views','./views');
 
+//---- routing 
+app.use('/',require('./routes'));
 
 
 

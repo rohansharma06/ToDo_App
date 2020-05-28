@@ -8,6 +8,7 @@
     </title>
     <link rel="stylesheet" href="/css/home.css">
     <script src="https://kit.fontawesome.com/95749693e7.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <div id="container">
@@ -16,27 +17,27 @@
          <!-- ----Div1 for Display current date and day---- -->
         <div class="date-section">
             <div class="dateContainer">
-                <div id="date"><span>23</span></div>
+                <div id="date"><span id="todayDate"></span></div>
                 <div id="monthYear">
-                    <span id="month">May</span>
-                    <span id="year">2020</span>
+                    <span id="month"></span>
+                    <span id="year"></span>
                 </div>
             </div>
             
             <div id="day">
-                <span>Tuesday</span>
+                <span id="currDay"></span>
             </div>
         </div>
         <hr>
 
         <!-- ----form for taking inputs---- -->
-        <form action="">
+        <form action="/create" method="POST">
             <!-- ----Div1 for adding category and dueDate---- -->
             <div class="category-dueDate">
                 <div id="category">
                     <h3>Category</h3>
                     <div id="category-icon">
-                        <select name="category" required>
+                        <select  name="category" required>
                             <option value=""> Choose a Category: </option>
                             <option value="personal">Personal</option>
                             <option value="home">Home </option>
@@ -49,7 +50,7 @@
                 <div id="dueDate">
                     <h3>Due Date</h3>
                     <div id="calender-icon">
-                        <input type="date" id="due-date" name="Due_Date" required>
+                        <input type="date" id="due-date" name="dueDate" required>
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     
@@ -68,134 +69,30 @@
         <!-- ---- List of all Task---- -->
          <div class="taskList-container">
             <ul>
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
+                <% for(let i of ToDo_List){ %>
+                    <li class="listItems">
+                        <div class="row1">
+                            <div class="select">
+                                <a href="https://www.youtube.com/">
+                                    <i class="fas fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="taskName">
+                                <p> <%=i.taskName %> </p>
+                            </div>
+                            <div class="delete">
+                                <a href="/delete-task/?id=<%= i._id %>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
+                        <div class="taskDueDate">
+                            <i class="fas fa-calendar-alt"></i>
+                            <!-- <p>May 23,2020</p> -->
+                            <p> <%= i.dueDate %> </p>
                         </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
-
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
-                        </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
-                        </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
-
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
-                        </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
-                        </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
-                        </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
-                        </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
-                        </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
-                        </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
-                <li class="listItems">
-                    <div class="row1">
-                        <div class="select">
-                            <a href="#">
-                                <i class="fas fa-circle"></i>
-                            </a>
-                        </div>
-                        <div class="taskName">
-                            <p>Have to do  qdqd dqdq fqf qqf this daf ss svs fsf sfsfs sfsfs sfsf task importan need to be done</p>
-                        </div>
-                        <div class="delete">
-                            <a href="#">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="taskDueDate">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>May 23,2020</p>
-                    </div>
-                </li>
+                    </li>
+                <% }%>
             </ul>
          </div>
 
@@ -221,6 +118,6 @@
             </ul>
          </div>
     </div>
-    
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>

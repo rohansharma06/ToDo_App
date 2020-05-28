@@ -262,6 +262,9 @@ body{
         border: 2px solid black;
         border-radius: 50%;
     }
+    .taskList-container .listItems .row1 .select a:visited i{
+        color: green;
+    }
     .taskList-container .listItems .row1 .taskName{
         position: relative;
         display: flex;
@@ -292,11 +295,12 @@ body{
         display: flex;
         flex-direction: row;
         width: 200px;
-        height: 30px;
+        height: 29px;
         margin-left: 35px;
         margin-bottom: 2px;
         color:grey;
         /* border: 1px solid black; */
+        overflow: hidden;
         
     }
     .taskList-container .listItems .taskDueDate i{
