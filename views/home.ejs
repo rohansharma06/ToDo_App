@@ -81,7 +81,7 @@
                                 <p> <%=i.taskName %> </p>
                             </div>
                             <div class="delete">
-                                <a href="/delete-task/?id=<%= i._id %>">
+                                <a href="/delete-task/?id=<%= i._id %>&category=<%=i.category %>">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </div>
@@ -101,19 +101,19 @@
          <div class="categoriesSelect">
             <ul>
                 <li>
-                    <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_visited" target="_blank">All</a>
+                    <a href="/category/?category=all">All</a>
                 </li>
                 <li>
-                    <a href="#">Personal</a>
+                    <a href="/category/?category=personal">Personal</a>
                 </li>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="/category/?category=home">Home</a>
                 </li>
                 <li>
-                    <a href="#">Business</a>
+                    <a href="/category/?category=business">Business</a>
                 </li>
                 <li>
-                    <a href="#">Work</a>
+                    <a href="/category/?category=work">Work</a>
                 </li>
             </ul>
          </div>

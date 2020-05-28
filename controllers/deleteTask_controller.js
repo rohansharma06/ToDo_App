@@ -7,6 +7,7 @@ module.exports.delete=function(req,res){
             console.log("Error in deleting a task");
             return;
         }
-        return res.redirect('/');
+        console.log(req.query);
+        return res.redirect('back');
     });
 }

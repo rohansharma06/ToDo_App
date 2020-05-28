@@ -7,7 +7,10 @@ const express=require('express');
     const createTaskController=require('../controllers/createTask_controller'); 
 //--- detele task
     const deleteTaskController=require('../controllers/deleteTask_controller');
-    //---- use to data rom URL
+//----different category controller
+    const categoryController=require('../controllers/category_controller');
+
+//---- use to data rom URL
     router.use(express.urlencoded()); 
 
 
@@ -15,7 +18,11 @@ console.log("router loded");
 
 router.get('/',homeController.home);
 router.post('/create',createTaskController.create);
+
 router.get('/delete-task',deleteTaskController.delete);
 
+
+//---- show task of different category
+router.get('/category',categoryController.go);
 
 module.exports=router;
