@@ -1,5 +1,6 @@
 const ToDO=require('../models/todoList');
 module.exports.create=function(req,res){
+    // console.log(typeof(req.body.dueDate));
     ToDO.create({
         taskName:req.body.taskName,
         category:req.body.category,
@@ -12,8 +13,4 @@ module.exports.create=function(req,res){
         console.log('*****',newToDo);
         return res.redirect('/');
     });
-    // console.log(req.body.taskName);
-    // console.log(req.body.category);
-    // console.log(req.body.dueDate);
-    // return res.redirect('/');
 };
