@@ -15,8 +15,6 @@ const toDoSchema=new mongoose.Schema({
         type:Date,
         required:true
     }
-},{
-    timestamps:true   
 });
 
 //---- adding document to collection
