@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: rgb(179, 197, 191);
+    background-color: rgb(202, 202, 202);
     font-family: sans-serif;
 }
 /* ----Container ---- */
@@ -13,11 +13,16 @@ body{
     border: 2px solid black;
     border-radius: 10px 10px 10px 10px;
     background-color: white;
+    box-shadow: 2px 2px 4px 4px black;
 }
 /* ---- heading ---- */
     #heading{
         margin: 2px 0px 0px 0px;
         text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #heading span{
+        color: #bf39c1;
     }
     /* ----styling to hr ---- */
     hr{
@@ -46,6 +51,7 @@ body{
         font-weight: 3rem;
         text-align: center;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #9e4200;
     }
     .date-section .dateContainer #monthYear{
         display: flex;
@@ -69,7 +75,7 @@ body{
     .date-section #day span{
         position: absolute;
         right: 0%;
-        color: rgb(214, 187, 35);
+        color: rgba(87, 35, 214, 0.68);
         font-size: 2rem;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-style: oblique;
@@ -103,7 +109,7 @@ body{
         position: relative;
         /* left: 5px; */
         font-size: 1.5rem;
-        color: blue;
+        color: rgb(42, 42, 240);
     }
     .category-dueDate #category:hover{
         background-color: lightgray;
@@ -133,7 +139,7 @@ body{
     .category-dueDate #dueDate #calender-icon i{
         position: relative;
         font-size: 1.5rem;
-        color: blue;
+        color: rgb(42, 42, 240);
     }
     .category-dueDate #dueDate:hover{
         background-color: lightgray;
@@ -188,7 +194,7 @@ body{
         align-self: flex-end;
         font-size: 2rem;
         /* margin-left: 10px; */
-        color: blue;
+        color: rgb(42, 42, 240);
     }
     .taskInput:hover{
         background-color: lightgrey;
@@ -219,6 +225,7 @@ body{
         border-radius: 10px 10px 10px 10px;
         overflow-y: auto;
     }
+   
     .taskList-container ul{
         padding: 0;
         margin: 0;
@@ -239,8 +246,14 @@ body{
         justify-content: space-between;
         width: 48%;
         height: 15vh;
-        border: 2px solid rgb(100, 98, 98);
+        border: 2px solid rgb(206, 195, 195);
         border-radius: 10px 10px 10px 10px;
+    }
+    .taskList-container .listItems:hover{
+        cursor: pointer;
+        background-color: rgb(166, 178, 180);
+        /* transform: scale(1,0.9); */
+        box-shadow: 2px 2px 2px black;
     }
     .taskList-container .listItems .row1{
         display: flex;
@@ -256,22 +269,20 @@ body{
         position: relative;
         top: 20px;
     }
-    .taskList-container .listItems .row1 .select a i{
+    .taskList-container .listItems .row1 .select i{
         
-        color: grey;
-        border: 2px solid black;
-        border-radius: 50%;
+        /* border: 2px solid black; */
+        color: #e09b46;
+        /* border-radius: 50%; */
     }
-    .taskList-container .listItems .row1 .select a:visited i{
-        color: green;
-    }
+    
     .taskList-container .listItems .row1 .taskName{
         position: relative;
         display: flex;
         flex-direction: column;
-        top: 8px;
+        top: 15px;
         left: 2px;
-        width: 84%;
+        width: 82%;
         height: 35px;
         overflow: hidden;
         /* border: 1px solid black; */
@@ -279,6 +290,8 @@ body{
     .taskList-container .listItems .row1 .taskName p{
         padding: 0;
         margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
     }
     .taskList-container .listItems .row1 .delete{
         display: flex;
@@ -288,16 +301,19 @@ body{
         height: 20%;
     }
     .taskList-container .listItems .row1 .delete a i{
-        color: red;
+        color: #ff0000;
+        text-shadow: 2px 2px 4px rgb(71, 60, 60);
     }
 
     .taskList-container .listItems .taskDueDate{
+        position: relative;
         display: flex;
         flex-direction: row;
-        width: 200px;
+        flex-wrap: nowrap;
+        width: 170px;
         height: 29px;
-        margin-left: 35px;
-        margin-bottom: 2px;
+        left: 16px;
+        bottom: 2px;
         color:grey;
         /* border: 1px solid black; */
         overflow: hidden;
@@ -306,57 +322,101 @@ body{
     .taskList-container .listItems .taskDueDate i{
         position: relative;
         top: 5px;
-        left: 3px;
     }
     .taskList-container .listItems .taskDueDate p{
         position: relative;
         margin: 0;
         padding: 0;
         top: 8px;
-        left: 10px;
+        left: 2px;
         /* font-size: 1em; */
         font-weight: bold;
         font-style: oblique;
         font-family: 'Courier New', Courier, monospace;
     }  
-/* ----Different categoriesSelect---- */
-    .categoriesSelect{
-        text-align: center;
-        margin-top: 15px;
-        height: 30px;
-        /* border: 1px solid black; */
+/* ---- Footer ---- */
+    .footer{
+        position: relative;
+        top: 0;
+        display: flex;
+        margin: 0;
+        justify-content: space-around;
+        flex-shrink: unset;
+
     }
-    .categoriesSelect ul{
+    /* --- display total task */
+    .footer .totalTask{
+        display: flex;
+        flex-direction: row;
+    }
+    .footer .totalTask p{
+        position: relative;
+        top: 15px;
+        margin: 0;
+        font-weight: bold;
+    }
+    .footer .totalTask p span{
+        color: red;
+        font-size: 1.5em;
+    }
+    /* --- display diff categories */
+    .footer .categoriesSelect{
+        display: flex;
+        flex-direction: row;
+    }
+    .footer .categoriesSelect ul{
         list-style: none;
         display: inline;
+        margin: 0;
+        padding: 0;
     }
-    .categoriesSelect ul li{
+    .footer .categoriesSelect ul li{
         display: inline;
-        margin-right: 5px;
+        margin-right: 2px;
     }
-    .categoriesSelect ul li a{
+    .footer .categoriesSelect ul li a:link{
         list-style: none;
-        color: blueviolet;
+        color: gray;
         text-decoration: none;
         font-size: 1rem;
         font-weight: bolder;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .categoriesSelect ul li:hover a{
-        color: gray;
+    /* .footer .categoriesSelect ul li a:visited{
+        color: black;
+    } */
+    .footer .categoriesSelect ul li a:focus{
+        background-color: rgb(129, 145, 145);
+    }
+    .footer .categoriesSelect ul li a:hover{
         text-decoration: underline;
     }
-
+    /* ---- clear button */
+    .footer .clear{
+        position: relative;
+        top:8px;
+        display: flex;
+        flex-direction: row;
+    }
+    .footer .clear a i{
+        color: rgb(129, 110, 110);
+        font-size: 25px;
+        text-shadow: 2px 1px rgb(48, 46, 46);
+    }
+    .footer .clear a i:hover{
+        cursor: pointer;
+        transform: rotateX(180deg);
+        
+    }
 
 
 /* ---- resonsiveness ---- */
 @media only screen and (max-width:900px){
     body{
-        /* background-color: black; */
         min-width: 70vh ;
     }
     #container{
-        left: 5px;
+        left: 35px;
         max-width: 63vh ;
     }
 }
