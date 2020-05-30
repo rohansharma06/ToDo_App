@@ -14,7 +14,7 @@ app.set('views','./views');
 app.use('/',require('./routes'));
 
 
-
+//---- calling server
 app.listen(port,function(err){
     if(err){
         console.log(`Error in running the server: ${err}`);
