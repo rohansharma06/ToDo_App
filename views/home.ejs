@@ -61,25 +61,24 @@
             <div class="taskInput">
                 <h3>Enter Task</h3>
                 <div class="add-task">
-                    <input type="text" name="taskName" placeholder="What do you need to do?" required>
-                    <button type="submit"> <i class="fas fa-plus-circle add-item"></i> </button>
+                    <input id="check" type="text" name="taskName" placeholder="What do you need to do?" required>
+                    <button type="submit" onclick="notification('success')"> <i class="fas fa-plus-circle add-item"></i> </button>
                 </div>
             </div>
         </form>
-        <!-- ---- List of all Task---- -->
+        <!-- ---- List of all diffent Task---- -->
          <div class="taskList-container">
             <ul>
                 <% for(let i of ToDo_List){ %>
                     <li class="listItems" >
                         <div class="row1">
                             <div class="select">
-                                <!-- <i class="fas fa-circle"></i> -->
                                 <i class="fas fa-thumbtack"></i>
                             </div>
                             <div class="taskName">
                                 <p> <%=i.taskName %> </p>
                             </div>
-                            <div class="delete">
+                            <div class="delete" onclick="notification('error')">
                                 <a href="/delete-task/?id=<%= i._id %>&category=<%=i.category %>">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
@@ -119,7 +118,7 @@
                     </li>
                 </ul>
              </div>
-             <div class="clear">
+             <div class="clear" onclick="notification('deleteAll')">
                 <a href="/deleteAllTask">
                     <i class="fas fa-sync-alt"></i>
                 </a>
@@ -127,6 +126,10 @@
         </div>
          
     </div>
+
+    <!-- ---- show notification on adding/deleting task---- -->
+    <div id="notify"></div>
+
     <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>
