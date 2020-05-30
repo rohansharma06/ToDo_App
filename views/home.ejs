@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="container">
-        <h1 id="heading">ToDo App</h1>
+        <h1 id="heading">To<span>Do</span></h1>
         <hr>
          <!-- ----Div1 for Display current date and day---- -->
         <div class="date-section">
@@ -50,7 +50,7 @@
                 <div id="dueDate">
                     <h3>Due Date</h3>
                     <div id="calender-icon">
-                        <input type="date" id="due-date" name="dueDate" required>
+                        <input type="date" id="due-date" name="dueDate">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     
@@ -70,12 +70,11 @@
          <div class="taskList-container">
             <ul>
                 <% for(let i of ToDo_List){ %>
-                    <li class="listItems">
+                    <li class="listItems" >
                         <div class="row1">
                             <div class="select">
-                                <a href="https://www.youtube.com/">
-                                    <i class="fas fa-circle"></i>
-                                </a>
+                                <!-- <i class="fas fa-circle"></i> -->
+                                <i class="fas fa-thumbtack"></i>
                             </div>
                             <div class="taskName">
                                 <p> <%=i.taskName %> </p>
@@ -88,7 +87,6 @@
                         </div>
                         <div class="taskDueDate">
                             <i class="fas fa-calendar-alt"></i>
-                            <!-- <p>May 23,2020</p> -->
                             <p> <%= i.dueDate %> </p>
                         </div>
                     </li>
@@ -98,25 +96,36 @@
 
          <hr>
         <!-- ----showing differnt Categories---- -->
-         <div class="categoriesSelect">
-            <ul>
-                <li>
-                    <a href="/category/?category=all">All</a>
-                </li>
-                <li>
-                    <a href="/category/?category=personal">Personal</a>
-                </li>
-                <li>
-                    <a href="/category/?category=home">Home</a>
-                </li>
-                <li>
-                    <a href="/category/?category=business">Business</a>
-                </li>
-                <li>
-                    <a href="/category/?category=work">Work</a>
-                </li>
-            </ul>
-         </div>
+        <div class="footer">
+            <div class="totalTask">
+                <p>Total: <span><%= ToDo_List.length %></span>  </p>
+            </div>
+            <div class="categoriesSelect">
+                <ul>
+                    <li>
+                        <a href="/category/?category=all">All</a>
+                    </li>
+                    <li>
+                        <a href="/category/?category=personal">Personal</a>
+                    </li>
+                    <li>
+                        <a href="/category/?category=home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category/?category=business">Business</a>
+                    </li>
+                    <li>
+                        <a href="/category/?category=work">Work</a>
+                    </li>
+                </ul>
+             </div>
+             <div class="clear">
+                <a href="/deleteAllTask">
+                    <i class="fas fa-sync-alt"></i>
+                </a>
+             </div>
+        </div>
+         
     </div>
     <script type="text/javascript" src="/js/home.js"></script>
 </body>
