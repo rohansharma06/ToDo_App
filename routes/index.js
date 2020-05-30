@@ -20,7 +20,7 @@ router.get('/',homeController.home);
 router.post('/create',createTaskController.create);
 
 router.get('/delete-task',deleteTaskController.delete);
-
+router.get('/deleteAllTask',deleteTaskController.all);
 
 //---- show task of different category
 router.get('/category',categoryController.go);
