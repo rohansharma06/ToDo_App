@@ -17,14 +17,26 @@
 
 //---- set value and min property of dueDate input
     let mydueDate;
-    if(today.getMonth()+1 >=9){
-        mydueDate=today.getFullYear()+"-"+("0"+(today.getMonth()+1))+"-"+today.getDate();
+    var month;
+    var date;
+    if(today.getMonth()+1<=9){
+        month="0"+(today.getMonth()+1);
+    }else{
+        month=(today.getMonth()+1);
     }
-    else{
-        mydueDate=today.getFullYear()+"-"+("0"+(today.getMonth()+1))+"-"+today.getDate();
+
+    if(today.getDate()<=9){
+        date="0"+today.getDate();
+    }else{
+        date=today.getDate();
     }
+    //console.log(month);
+    mydueDate=today.getFullYear()+"-"+month+"-"+date;
+    console.log(mydueDate);
     var find=document.querySelector('input[type="date"]');
-    find.value=mydueDate;
+    find.setAttribute("value",mydueDate);
+    find.setAttribute("min",mydueDate);
+    //find.value=mydueDate;
     find.min=mydueDate;
 
 // ---- Display notification on adding/deleting tast----
