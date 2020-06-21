@@ -11,9 +11,9 @@
     var year=today.getFullYear().toString();
     document.getElementById("year").innerHTML=year;
 
-    var days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+    var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var day=today.getDay();
-    document.getElementById("currDay").innerHTML=days[day-1];
+    document.getElementById("currDay").innerHTML=days[day];
 
 //---- set value and min property of dueDate input
     let mydueDate;
